@@ -15,18 +15,18 @@ set character_set_database = utf8;
 drop database mydatabase;
 -- **Table level**
 -- Revise table name
-alter table subject rename subjects;
+alter table student rename students ;
 -- Revise the field's data type
-alter table subjects modify description varchar(100);
+alter table students modify name varchar(20);
 -- Revise field name
-alter table subjects change subject sub_name varchar(40);
+alter table students change name s_name varchar(40);
 -- Add field
-alter table subjects add class_addr varchar(40);
+alter table students add addr varchar(40);
 -- Delete field
-alter table subjects drop class_addr;
+alter table students drop addr;
 -- Revise the table's storage engine
-alter table subjects engine = INNODB;
+alter table students engine = INNODB;
 -- Delete the table's foreign key restriant
 alter table score drop constraint subject_id;
 -- Delete a table
-drop table subjects;
+drop table students;
